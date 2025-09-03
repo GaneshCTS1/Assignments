@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.example</groupId>
+    <artifactId>GaneshParent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../GaneshParent</relativePath>
+  </parent>
+  <artifactId>GaneshChild</artifactId>
+  <name>GaneshChild</name>
+  
+  <properties>
+  <java.version>1.8</java.version>
+  </properties>
+  
+  <dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>7.0.0-M8</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+  <plugins>
+  <plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.5.3</version></plugin>
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-javadoc-plugin</artifactId>
+    <version>3.11.3</version>
+    </plugin>
+  </plugins>
+  </build>
+  <profiles>
+  <profile>
+ <id>dev</id>
+ <properties>
+ <db.url>jdbc:mysql://localhost:3306/dev</db.url>
+ </properties>
+  </profile>
+  <profile>
+  <id>prod</id>
+  <properties>
+  <db.url>jdbc:mysql://localhost:3306/prod</db.url>
+  </properties>
+  </profile>
+  <profile>
+  <id>qa</id>
+  <properties>
+  <db.url>jdbc:mysql://localhost:3306/qa</db.url>
+  </properties>
+  </profile>
+  </profiles>
+  
+</project>
