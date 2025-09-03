@@ -11,14 +11,9 @@
 .vscode/
 *.code-workspace
 
-# IntelliJ IDEA
-.idea/
-*.iws
-*.iml
-*.ipr
 
 # Maven
-target/
+# target/ - Commented out to include target folders in Git
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -28,6 +23,10 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+
+# Include src and target directories in Git
+# src/ - Already included by default
+# target/ - Now included (commented out above)
 
 # Java
 *.class
@@ -70,9 +69,9 @@ Desktop.ini
 # Log files
 *.log
 
-# Maven site output (optional - remove this line if you want to include generated sites)
-site/
-staging/
+# Maven site output - Now included in Git for assignment purposes
+# site/ - Commented out to include Maven site output
+# staging/ - Commented out to include Maven staging output
 
 # IDE workspace files
 *.sublime-project
